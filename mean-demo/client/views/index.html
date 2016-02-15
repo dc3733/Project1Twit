@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html ng-app="meetupApp">
+  <head>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <title></title>
+      <meta name="description" content="">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+  <body style="background-color:lightgrey;">
+
+      <!-- Meetups View -->
+      <div ng-controller="meetupsController">
+        <h1 style="color:red;">{{meetups.length}} ToDo task</h1>
+        <h4 style="color:red;">Task for User: DC</h4>
+          <p>DC this is where you would enter your task you need to complete for the day
+          day. It will list the number of your task as you add them.
+          And once you complete just simply delete it. </p>
+        <ul>
+         <li  ng-repeat="meetup in meetups">
+           {{meetup.name}}
+         </li>
+       </ul>
+       <form ng-submit="createMeetup()">
+        <input type="text" placeholder="What ToDo today?" ng-model="meetupName"></input>
+        <button type="submit">Add Task</button>
+        <button type="submit">Delete Task</button>
+
+      </form>
+      </div>
+
+      <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.js"></script>
+      <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular-resource.js"></script>
+      <script type="text/javascript" src="/js/app.js"></script>
+      <script type="text/javascript" src="/js/controllers/meetups-controller.js"></script>
+  </body>
+</html>
+
+<!-- https://ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.min.js -->
